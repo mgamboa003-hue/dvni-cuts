@@ -5,6 +5,6 @@
    NUNCA pongas aquí la "service_role key".
    Si se dejan vacías, la web muestra el contenido de ejemplo. */
 window.DVNI_CONFIG = {
-  url: "",
-  anon: ""
+  url: "https://mlpubkjlogypntlpvmyd.supabase.co",
+  anon: "sb_publishable_TPCIO0_9oPgIDBbzrPZAHg_aPQGiUHg"
 };
