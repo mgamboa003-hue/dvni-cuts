@@ -806,7 +806,7 @@ if(C.url&&C.anon){
   document.body.classList.add('loading');
   var done=function(){document.body.classList.remove('loading')};
   var t=setTimeout(done,2000);
-  fetch(C.url.replace(/\/$/,'')+'/rest/v1/contenido?id=eq.1&select=data',{headers:{apikey:C.anon,Authorization:'Bearer '+C.anon}})
+  fetch(C.url.replace(/\/$/,'')+'/rest/v1/contenido?id=eq.1&select=data',{headers:/^eyJ/.test(C.anon)?{apikey:C.anon,Authorization:'Bearer '+C.anon}:{apikey:C.anon}})
     .then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
     .then(function(rows){if(rows&&rows[0]&&rows[0].data){S=merge(window.DVNI_DEFAULT,rows[0].data);renderAll();watchReveal()}})
     .catch(function(e){console.warn('DVNI: no se pudo cargar el contenido, se muestra el de ejemplo',e)})
